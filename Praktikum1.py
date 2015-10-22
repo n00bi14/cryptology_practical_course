@@ -71,7 +71,7 @@ def euklid(c, d, m):
     return -1
 
 
-"""
+
 #Aufgabe 1 und Aufgabe 2:
 [result1, rounds1] = gcd(282,240)
 print "gcd(282,240) = " + str(result1) + " in " + str(rounds1) + " rounds."
@@ -81,32 +81,32 @@ print "gcd(9^100+1,10^100+1) = " + str(result2) + " in " + str(rounds2) + " roun
 
 
 #Aufgabe 3 und Aufgabe 4:
-print "Monte-Carlo-Sim mit anz = 50 und n von 1-99"
+print "Monte-Carlo-Sim mit anz = 50 und n von 1-199"
 #for i in range(1,100):
 #    print "n=" + str(i) + "; stellen=" + str((i*2+1))  + "; middle=" + str(monteCarloSim(100, 100**i))
 
 fobj_out = open("50_sims","w")
-for i in range(1,100):
+for i in range(1,200):
     fobj_out.write(str((i*2+1))  + "\t" + str(monteCarloSim(50, 100**i)) + "\n")
 
 fobj_out.close();
 
-print "Monte-Carlo-Sim mit anz = 100 und n von 1-99"
+print "Monte-Carlo-Sim mit anz = 100 und n von 1-199"
 
 fobj_out = open("100_sims","w")
-for i in range(1,100):
+for i in range(1,200):
     fobj_out.write(str((i*2+1))  + "\t" + str(monteCarloSim(100, 100**i)) + "\n")
 
 fobj_out.close();
 
-print "Monte-Carlo-Sim mit anz = 200 und n von 1-99"
+print "Monte-Carlo-Sim mit anz = 200 und n von 1-199"
 
 fobj_out = open("200_sims","w")
-for i in range(1,100):
+for i in range(1,200):
     fobj_out.write(str((i*2+1))  + "\t" + str(monteCarloSim(200, 100**i)) + "\n")
 
 fobj_out.close();
-"""
+
 
 #Aufgabe 5
 print euklid(12, 20, 56)
