@@ -31,47 +31,44 @@ def getXdach(a, b, g):
     q = [0,0]
     k = 2
 
-    if a > b:
-        x.append(0)
-        x.append(1)
-    else:
-        x.append(1)
-        x.append(0)
+    x.append(1)
+    x.append(0)
 
     #print "g=" + str(g)
 
     while r[k-1] != g:
-
         #k ist immer k+1
 
         r.append(r[k-2] % r[k-1])
         q.append(r[k-2] // r[k-1])
         x.append(q[k] * x[k-1] + x[k-2])
 
+
         #print "Round " + str(k)
         #print "rk=" + str(r[k])
-        #print "rk-1=" + str(rkMinusEins)
+        #print "rk-1=" + str(r[k-1])
+        #print "rk-2=" + str(r[k-2])
         #print "qk=" + str(q[k])
         #print "xk=" + str(x[k])
-        #print "xk-1=" + str(xkMinusEins)
+        #print "xk-1=" + str(x[k-1])
 
         k += 1
 
-    return x[k-1]
+    #return x[k-1]
+    return ((-1)**(k-1)) * x[k-1]
 
 def euklid(c, d, m):
     if c >= 0 and d >= 0 and m > 0:
         [g,rounds] = gcd(c,m)
         if(d % g == 0):
-            xDach = getXdach(m,c,g)
+            xDach = getXdach(c,m,g)
             #print "d=" + str(d) + "   g=" + str(g) +  "   xDach=" + str(xDach)
             return ((d / g) * xDach) % m
-
 
     return -1
 
 
-
+"""
 #Aufgabe 1 und Aufgabe 2:
 [result1, rounds1] = gcd(282,240)
 print "gcd(282,240) = " + str(result1) + " in " + str(rounds1) + " rounds."
@@ -106,12 +103,17 @@ for i in range(1,200):
     fobj_out.write(str((i*2+1))  + "\t" + str(monteCarloSim(200, 100**i)) + "\n")
 
 fobj_out.close();
-
+"""
 
 #Aufgabe 5
-print euklid(12, 20, 56)
-print euklid(86, 13, 64)
-print euklid(19, 14, 61)
-print euklid(6, 3, 15)
-print 10**100+1
-print euklid(9**100+1, 8**100+1, 10**100+1)
+#c * x mod m = d
+#print euklid(25, 13, 61)  #Ergebnis = 42
+#print euklid(86, 13, 61)  #Ergebnis = 42
+#print euklid(19, 14, 61)  #Ergebnis = 20
+#print euklid(6, 3, 15)    #Ergebnis = 13
+#print euklid(6, 3, 18)    #Ergebnis = -1
+#print 10**100+1
+tmp = euklid(9**100+1, 8**100+1, 10**100+1)
+print tmp
+print tmp * (9**100+1) % (8**100+1)
+print 8**100+1
