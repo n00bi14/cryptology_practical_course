@@ -68,16 +68,18 @@ def euklid(c, d, m):
     return -1
 
 
-"""
+
 #Aufgabe 1 und Aufgabe 2:
+print "Aufgabe 1 und Aufgabe 2:"
 [result1, rounds1] = gcd(282,240)
 print "gcd(282,240) = " + str(result1) + " in " + str(rounds1) + " rounds."
 
 [result2, rounds2] = gcd((9**100)+1,(10**100)+1)
 print "gcd(9^100+1,10^100+1) = " + str(result2) + " in " + str(rounds2) + " rounds."
 
-
+"""
 #Aufgabe 3 und Aufgabe 4:
+print "Aufgabe 3 und Aufgabe 2:"
 print "Monte-Carlo-Sim mit anz = 50 und n von 1-199"
 #for i in range(1,100):
 #    print "n=" + str(i) + "; stellen=" + str((i*2+1))  + "; middle=" + str(monteCarloSim(100, 100**i))
@@ -107,13 +109,52 @@ fobj_out.close();
 
 #Aufgabe 5
 #c * x mod m = d
-#print euklid(25, 13, 61)  #Ergebnis = 42
-#print euklid(86, 13, 61)  #Ergebnis = 42
-#print euklid(19, 14, 61)  #Ergebnis = 20
-#print euklid(6, 3, 15)    #Ergebnis = 13
-#print euklid(6, 3, 18)    #Ergebnis = -1
-#print 10**100+1
+print "Aufgabe 5:"
+tmp = euklid(25, 13, 61)  #Ergebnis = 42
+print "euklid(25, 13, 61) = " + str(tmp)
+print "Probe: 25 * " + str(tmp) + " mod 61 = 13 ?"
+print "       " + str((25*tmp)%61) + " = 13"
+
+tmp = euklid(86, 13, 61)  #Ergebnis = 42
+print "euklid(86, 13, 61) = " + str(tmp)
+print "Probe: 86 * " + str(tmp) + " mod 61 = 13 ?"
+print "       " + str((86*tmp)%61) + " = 13"
+
+tmp =  euklid(19, 14, 61)  #Ergebnis = 20
+print "euklid(19, 14, 61) = " + str(tmp)
+print "Probe: 19 * " + str(tmp) + " mod 61 = 14 ?"
+print "       " + str((19*tmp)%61) + " = 14"
+
+tmp =  euklid(6, 3, 15)    #Ergebnis = 13
+print "euklid(6, 3, 15) = " + str(tmp)
+print "Probe: 6 * " + str(tmp) + " mod 15 = 3 ?"
+print "       " + str((6*tmp)%15) + " = 3"
+
+tmp =  euklid(6, 3, 18)    #Ergebnis = -1
+print "euklid(6, 3, 18) = " + str(tmp)
+
 tmp = euklid(9**100+1, 8**100+1, 10**100+1)
-print tmp
-print tmp * (9**100+1) % (8**100+1)
-print 8**100+1
+print "euklid(9**100+1, 8**100+1, 10**100+1) = " + str(tmp)
+print "Probe : 9**100+1 * " + str(tmp) + " mod 10**100+1 = 8**100+1 ? "
+print "       " + str(((9**100+1) * tmp) % (10**100+1))
+print "      =" + str(8**100+1)
+
+
+#Uebung Aufgabe 5 und 6
+#print euklid(9,13, 25)
+"""
+print euklid(25, 13, 61)
+print euklid(252, 48, 282)
+print euklid(9, 13, 25)
+print euklid(24, 9, 42)
+
+print gcd(25, 61)
+print gcd(252, 282)
+print gcd(9, 25)
+print gcd(24, 42)
+print gcd(87,20)
+"""
+
+#Uebung Aufgabe 7
+#for i in range(0,25):
+#    print str(i) + "    " + str(((7*i)+7) % 26)
