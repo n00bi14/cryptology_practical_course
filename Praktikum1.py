@@ -8,13 +8,13 @@ def gcd_run(a,b, rounds):
         return (b,rounds)
     return gcd_run(b, (a%b), rounds+1)
 
-def monteCarloSim(anz, n):
+def sim(anz, n):
     middle = 0
     cryptogen = SystemRandom()
 
     for a in range(1,anz):
         [a,b] = [cryptogen.randrange(n-1) for i in range(2)]
-        while b == 0:
+        while b == 0 and len(str(a)) < n-1 and len(str(b)) < n-1:
             [a,b] = [cryptogen.randrange(n-1) for i in range(2)]
         [result, rounds] = gcd(a,b)
         middle += rounds
@@ -68,7 +68,7 @@ def euklid(c, d, m):
     return -1
 
 
-
+"""
 #Aufgabe 1 und Aufgabe 2:
 print "Aufgabe 1 und Aufgabe 2:"
 [result1, rounds1] = gcd(282,240)
@@ -77,32 +77,32 @@ print "gcd(282,240) = " + str(result1) + " in " + str(rounds1) + " rounds."
 [result2, rounds2] = gcd((9**100)+1,(10**100)+1)
 print "gcd(9^100+1,10^100+1) = " + str(result2) + " in " + str(rounds2) + " rounds."
 
-"""
+
 #Aufgabe 3 und Aufgabe 4:
 print "Aufgabe 3 und Aufgabe 2:"
-print "Monte-Carlo-Sim mit anz = 50 und n von 1-199"
+print "Sim mit anz = 50 und n von 1-199"
 #for i in range(1,100):
 #    print "n=" + str(i) + "; stellen=" + str((i*2+1))  + "; middle=" + str(monteCarloSim(100, 100**i))
 
 fobj_out = open("50_sims","w")
 for i in range(1,200):
-    fobj_out.write(str((i*2+1))  + "\t" + str(monteCarloSim(50, 100**i)) + "\n")
+    fobj_out.write(str(len((str(100**i)))) + "\t" + str(sim(50, 100**i)) + "\n")
 
 fobj_out.close();
 
-print "Monte-Carlo-Sim mit anz = 100 und n von 1-199"
+print "Sim mit anz = 100 und n von 1-199"
 
 fobj_out = open("100_sims","w")
 for i in range(1,200):
-    fobj_out.write(str((i*2+1))  + "\t" + str(monteCarloSim(100, 100**i)) + "\n")
+    fobj_out.write(str((i*2+1))  + "\t" + str(sim(100, 100**i)) + "\n")
 
 fobj_out.close();
 
-print "Monte-Carlo-Sim mit anz = 200 und n von 1-199"
+print "Sim mit anz = 200 und n von 1-199"
 
 fobj_out = open("200_sims","w")
 for i in range(1,200):
-    fobj_out.write(str((i*2+1))  + "\t" + str(monteCarloSim(200, 100**i)) + "\n")
+    fobj_out.write(str((i*2+1))  + "\t" + str(sim(200, 100**i)) + "\n")
 
 fobj_out.close();
 """
