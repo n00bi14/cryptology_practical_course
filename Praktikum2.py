@@ -63,7 +63,6 @@ def monteCarloNextPrim(anz, n, it):
             distance = distance + 1
 
         result = result + distance
-        #print "Distance: " + str(distance)
         i = i + 1
 
     return (result // anz)
