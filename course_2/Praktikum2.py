@@ -77,41 +77,39 @@ def countWitness(n):
 
 
 #Aufgabe 1
-print "Aufgabe 1:"
-print "Ist moeglicherweise Prim? " + str((not isCompositeMillerRabin(17,5)))
-print "Ist moeglicherweise Prim? " + str((not isCompositeMillerRabin(32,5)))
-print "Ist moeglicherweise Prim? " + str((not isCompositeMillerRabin((10**100),10)))
+print("Aufgabe 1:")
+print("Ist moeglicherweise Prim? " + str((not isCompositeMillerRabin(17, 5))))
+print("Ist moeglicherweise Prim? " + str((not isCompositeMillerRabin(32, 5))))
+print("Ist moeglicherweise Prim? " + str((not isCompositeMillerRabin((10 ** 100), 10))))
 
-print ""
-print ""
+print("")
+print("")
 
 #Aufgabe 2
-print "Aufgabe 2:"
-print "Naechste Primzahl : " + str(getNextPrim(17,5))
-print "Naechste Primzahl : " + str(getNextPrim(32,5))
-print "Naechste Primzahl : " + str(getNextPrim((10**100),10))
+print("Aufgabe 2:")
+print("Naechste Primzahl : " + str(getNextPrim(17, 5)))
+print("Naechste Primzahl : " + str(getNextPrim(32, 5)))
+print("Naechste Primzahl : " + str(getNextPrim((10 ** 100), 10)))
 
-
-print ""
-print ""
+print("")
+print("")
 
 #Aufgabe 3
-print "Aufgabe 3:"
-print "Anzahl Zeugen: " + str(countWitness(9))
-print "Anzahl Zeugen: " + str(countWitness(325))
+print("Aufgabe 3:")
+print("Anzahl Zeugen: " + str(countWitness(9)))
+print("Anzahl Zeugen: " + str(countWitness(325)))
+
+print("")
+print("")
 
 
-print ""
-print ""
-
-"""
 def parallelSim(anz, rangeTo):
-    fobj_out = open(str(anz) + "_sims_nextPrim","w")
+    fobj_out = open("generated_files/"+str(anz) + "_sims_nextPrim","w")
     for i in drange(2, rangeTo, 0.5):
-        print str(anz) + " Simulationen, i = " + str(i)
+        print(str(anz) + " Simulationen, i = " + str(i))
         fobj_out.write(str((i*2+1)) + "\t" + str(monteCarloNextPrim(anz, 100**i, 10)) + "\n")
 
-    fobj_out.close();
+    fobj_out.close()
 
 #Aufgabe 4
 a = [50, 100, 200]
@@ -124,4 +122,4 @@ for p in processes:
 # Exit the completed processes
 for p in processes:
     p.join()
-"""
+
