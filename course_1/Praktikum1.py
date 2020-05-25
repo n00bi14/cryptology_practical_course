@@ -5,7 +5,7 @@ def gcd(a,b):
 
 def gcd_run(a,b, rounds):
     if a % b == 0:
-        return (b,rounds)
+        return b, rounds
     return gcd_run(b, (a%b), rounds+1)
 
 def sim(anz, n):
@@ -21,11 +21,8 @@ def sim(anz, n):
 
     return middle / anz
 
+
 def getXdach(a, b, g):
-
-    #print a
-    #print b
-
     r = [a,b]
     x = []
     q = [0,0]
@@ -34,11 +31,7 @@ def getXdach(a, b, g):
     x.append(1)
     x.append(0)
 
-    #print "g=" + str(g)
-
     while r[k-1] != g:
-        #k ist immer k+1
-
         r.append(r[k-2] % r[k-1])
         q.append(r[k-2] // r[k-1])
         x.append(q[k] * x[k-1] + x[k-2])
@@ -56,6 +49,7 @@ def getXdach(a, b, g):
 
     #return x[k-1]
     return ((-1)**(k-1)) * x[k-1]
+
 
 def euklid(c, d, m):
     if c >= 0 and d >= 0 and m > 0:
@@ -109,36 +103,35 @@ fobj_out.close();
 
 #Aufgabe 5
 #c * x mod m = d
-print "Aufgabe 5:"
+print("Aufgabe 5:")
 tmp = euklid(25, 13, 61)  #Ergebnis = 42
-print "euklid(25, 13, 61) = " + str(tmp)
-print "Probe: 25 * " + str(tmp) + " mod 61 = 13 ?"
-print "       " + str((25*tmp)%61) + " = 13"
+print("euklid(25, 13, 61) = " + str(tmp))
+print("Probe: 25 * " + str(tmp) + " mod 61 = 13 ?")
+print("       " + str((25 * tmp) % 61) + " = 13")
 
 tmp = euklid(86, 13, 61)  #Ergebnis = 42
-print "euklid(86, 13, 61) = " + str(tmp)
-print "Probe: 86 * " + str(tmp) + " mod 61 = 13 ?"
-print "       " + str((86*tmp)%61) + " = 13"
+print("euklid(86, 13, 61) = " + str(tmp))
+print("Probe: 86 * " + str(tmp) + " mod 61 = 13 ?")
+print("       " + str((86 * tmp) % 61) + " = 13")
 
 tmp =  euklid(19, 14, 61)  #Ergebnis = 20
-print "euklid(19, 14, 61) = " + str(tmp)
-print "Probe: 19 * " + str(tmp) + " mod 61 = 14 ?"
-print "       " + str((19*tmp)%61) + " = 14"
+print("euklid(19, 14, 61) = " + str(tmp))
+print("Probe: 19 * " + str(tmp) + " mod 61 = 14 ?")
+print("       " + str((19 * tmp) % 61) + " = 14")
 
 tmp =  euklid(6, 3, 15)    #Ergebnis = 13
-print "euklid(6, 3, 15) = " + str(tmp)
-print "Probe: 6 * " + str(tmp) + " mod 15 = 3 ?"
-print "       " + str((6*tmp)%15) + " = 3"
+print("euklid(6, 3, 15) = " + str(tmp))
+print("Probe: 6 * " + str(tmp) + " mod 15 = 3 ?")
+print("       " + str((6 * tmp) % 15) + " = 3")
 
 tmp =  euklid(6, 3, 18)    #Ergebnis = -1
-print "euklid(6, 3, 18) = " + str(tmp)
+print("euklid(6, 3, 18) = " + str(tmp))
 
 tmp = euklid(9**100+1, 8**100+1, 10**100+1)
-print "euklid(9**100+1, 8**100+1, 10**100+1) = " + str(tmp)
-print "Probe : 9**100+1 * " + str(tmp) + " mod 10**100+1 = 8**100+1 ? "
-print "       " + str(((9**100+1) * tmp) % (10**100+1))
-print "      =" + str(8**100+1)
-
+print("euklid(9**100+1, 8**100+1, 10**100+1) = " + str(tmp))
+print("Probe : 9**100+1 * " + str(tmp) + " mod 10**100+1 = 8**100+1 ? ")
+print("       " + str(((9 ** 100 + 1) * tmp) % (10 ** 100 + 1)))
+print("      =" + str(8 ** 100 + 1))
 
 #Uebung Aufgabe 5 und 6
 #print euklid(9,13, 25)
