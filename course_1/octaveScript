@@ -1,6 +1,6 @@
-data50 = dlmread("50_sims","\t")
-data100 = dlmread("100_sims","\t")
-data200 = dlmread("200_sims","\t")
+data50 = dlmread("generated_files/50_sims","\t")
+data100 = dlmread("generated_files/100_sims","\t")
+data200 = dlmread("generated_files/200_sims","\t")
 
 x_50 = data50(:,1)
 y_50 = data50(:,2)
