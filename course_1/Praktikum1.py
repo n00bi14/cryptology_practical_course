@@ -71,55 +71,50 @@ print("gcd(282,240) = " + str(result1) + " in " + str(rounds1) + " rounds.")
 [result2, rounds2] = gcd((9 ** 100) + 1, (10 ** 100) + 1)
 print("gcd(9^100+1,10^100+1) = " + str(result2) + " in " + str(rounds2) + " rounds.")
 
-# Aufgabe 3 und Aufgabe 4:
-print("Aufgabe 3 und Aufgabe 2:")
-print("Sim mit anz = 50 und n von 1-199")
-# for i in range(1,100):
-#    print "n=" + str(i) + "; stellen=" + str((i*2+1))  + "; middle=" + str(monteCarloSim(100, 100**i))
-
+print("Exercise 3 and 2:")
+print("Simulation with count = 50 and n between 1-199")
 fobj_out = open("generated_files/50_sims", "w")
 for i in range(1, 200):
     fobj_out.write(str(len((str(100 ** i)))) + "\t" + str(sim(50, 100 ** i)) + "\n")
 
 fobj_out.close()
 
-print("Sim mit anz = 100 und n von 1-199")
 
+print("Simulation with count = 100 and n between 1-199")
 fobj_out = open("generated_files/100_sims", "w")
 for i in range(1, 200):
     fobj_out.write(str((i * 2 + 1)) + "\t" + str(sim(100, 100 ** i)) + "\n")
 
 fobj_out.close()
 
-print("Sim mit anz = 200 und n von 1-199")
 
+print("Simulation with count = 200 and n between 1-199")
 fobj_out = open("generated_files/200_sims", "w")
 for i in range(1, 200):
     fobj_out.write(str((i * 2 + 1)) + "\t" + str(sim(200, 100 ** i)) + "\n")
 
 fobj_out.close()
 
-# Aufgabe 5
-# c * x mod m = d
-print("Aufgabe 5:")
-tmp = euklid(25, 13, 61)  # Ergebnis = 42
+
+print("Exercise 5:")
+tmp = euklid(25, 13, 61)
 print("euklid(25, 13, 61) = " + str(tmp))
-print("Probe: 25 * " + str(tmp) + " mod 61 = 13 ?")
+print("Sample: 25 * " + str(tmp) + " mod 61 = 13 ?")
 print("       " + str((25 * tmp) % 61) + " = 13")
 
 tmp = euklid(86, 13, 61)  # Ergebnis = 42
 print("euklid(86, 13, 61) = " + str(tmp))
-print("Probe: 86 * " + str(tmp) + " mod 61 = 13 ?")
+print("Sample: 86 * " + str(tmp) + " mod 61 = 13 ?")
 print("       " + str((86 * tmp) % 61) + " = 13")
 
 tmp = euklid(19, 14, 61)  # Ergebnis = 20
 print("euklid(19, 14, 61) = " + str(tmp))
-print("Probe: 19 * " + str(tmp) + " mod 61 = 14 ?")
+print("Sample: 19 * " + str(tmp) + " mod 61 = 14 ?")
 print("       " + str((19 * tmp) % 61) + " = 14")
 
 tmp = euklid(6, 3, 15)  # Ergebnis = 13
 print("euklid(6, 3, 15) = " + str(tmp))
-print("Probe: 6 * " + str(tmp) + " mod 15 = 3 ?")
+print("Sample: 6 * " + str(tmp) + " mod 15 = 3 ?")
 print("       " + str((6 * tmp) % 15) + " = 3")
 
 tmp = euklid(6, 3, 18)  # Ergebnis = -1
@@ -127,11 +122,12 @@ print("euklid(6, 3, 18) = " + str(tmp))
 
 tmp = euklid(9 ** 100 + 1, 8 ** 100 + 1, 10 ** 100 + 1)
 print("euklid(9**100+1, 8**100+1, 10**100+1) = " + str(tmp))
-print("Probe : 9**100+1 * " + str(tmp) + " mod 10**100+1 = 8**100+1 ? ")
+print("Sample : 9**100+1 * " + str(tmp) + " mod 10**100+1 = 8**100+1 ? ")
 print("       " + str(((9 ** 100 + 1) * tmp) % (10 ** 100 + 1)))
 print("      =" + str(8 ** 100 + 1))
 
-# Uebung Aufgabe 5 und 6
+
+# Exercise 5 und 6
 print(euklid(9, 13, 25))
 
 print(euklid(25, 13, 61))
@@ -145,6 +141,6 @@ print(gcd(9, 25))
 print(gcd(24, 42))
 print(gcd(87, 20))
 
-# Uebung Aufgabe 7
+# Exercise 7
 for i in range(0, 25):
     print(str(i) + "    " + str(((7 * i) + 7) % 26))
