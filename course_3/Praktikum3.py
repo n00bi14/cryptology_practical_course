@@ -45,7 +45,7 @@ def getWitness(n):
     return cryptogen.randint(1, n - 1)
 
 
-# berechnet m hoch e mod n
+# calculates m ^ e mod n
 def modexp(m, e, n):
     if e == 0:
         return 1
@@ -53,8 +53,6 @@ def modexp(m, e, n):
         return m * modexp(m, e - 1, n) % n
     x = modexp(m, e // 2, n)
     p = x * x % n
-    # zusaetzliche Pruefung:
-    # x^2 = 1 mehr als die Loesungen 1 und -1
     if p == 1 and x != 1 and x != n - 1:
         raise
     return p
@@ -65,7 +63,7 @@ def isCompositeWitness(a, n):
         p = modexp(a, n - 1, n)
     except:
         return True
-    return p != 1  # p negieren, da kein zusammengesetzter Zeuge
+    return p != 1
 
 
 def isCompositeMillerRabin(n, k):
